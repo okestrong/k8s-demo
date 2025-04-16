@@ -6,7 +6,7 @@ spring:
   config:
     import: optional:file:.env[.properties]
   datasource:
-    url: ${DB_SERVER}
+    url: jdbc:mariadb://mariadb-service:3306/k8s_demo
     username: ${DB_USER}
     password: ${DB_PASSWORD}
   jpa:
@@ -20,8 +20,8 @@ spring:
         default_batch_fetch_size: 100
         physical_naming_strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
     hibernate:
-      ddl-auto: validate
-    defer-datasource-initialization: false
+      ddl-auto: none
+    defer-datasource-initialization: true
   sql:
     init:
       mode: always
