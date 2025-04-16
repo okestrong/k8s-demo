@@ -25,7 +25,7 @@ public class DemoController {
 
     @GetMapping("hello")
     public String hello() {
-        return "Hello World v3 on %s".formatted(hostname.substring(hostname.length() - 5));
+        return "Hello World v1 on %s".formatted(hostname.substring(hostname.length() - 5));
     }
 
     @GetMapping(value = "demo", produces = "application/vnd.kevin.random+json")
@@ -38,7 +38,7 @@ public class DemoController {
                 .limit(targetStringLength)
                 .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
                 .toString();
-        return "Random string v3 = %s".formatted(generatedString);
+        return "Random string v1 = %s".formatted(generatedString);
     }
 
     @GetMapping(value = "demo", produces = "application/vnd.kevin.uuid+json")
@@ -49,6 +49,6 @@ public class DemoController {
         buffer.putLong(uuid.getLeastSignificantBits());
         String random = Base64.getEncoder().withoutPadding().encodeToString(buffer.array())
                 .replace("/", "").replace("\\+", "-");
-        return "UUID string v3 = %s".formatted(random);
+        return "UUID string v1 = %s".formatted(random);
     }
 }
