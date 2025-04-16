@@ -3,10 +3,12 @@ server:
 spring:
   application:
     name: k8s-demo
+  config:
+    import: optional:file:.env[.properties]
   datasource:
-    url: jdbc:mariadb://hotk.co.kr/k8s_demo
-    username: k8s_user
-    password: okestro2025!
+    url: ${DB_SERVER}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
   jpa:
     open-in-view: false
     show-sql: true
