@@ -1,0 +1,32 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: k8s-demo
+  datasource:
+    url: jdbc:mariadb://hotk.co.kr/k8s_demo
+    username: k8s_user
+    password: okestro2025!
+  jpa:
+    open-in-view: false
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        highlight_sql: true
+        use_sql_comments: true
+        default_batch_fetch_size: 100
+        physical_naming_strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+    hibernate:
+      ddl-auto: validate
+    defer-datasource-initialization: false
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+logging:
+  level:
+    root: info
+    com.kevin.demo: debug
+    org.hibernate.show_sql: debug
+    org.hibernate.orm.jdbc.bind: trace
