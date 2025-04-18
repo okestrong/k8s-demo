@@ -17,7 +17,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 class StartupDelay {
     @PostConstruct
     public void init() throws InterruptedException {
-        Thread.sleep(30000); // 30초 지연
+        Thread.sleep(20000); // 20초 지연
         System.out.println("Application startup delay completed.");
     }
 }
