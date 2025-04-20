@@ -6,11 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.nio.ByteBuffer;
-import java.util.Base64;
-import java.util.Random;
-import java.util.UUID;
-
 @RestController
 @RequestMapping("api")
 @RequiredArgsConstructor
@@ -23,6 +18,6 @@ public class DemoController {
 
     @GetMapping("hello")
     public String hello() {
-        return "Hello World v2 on %s".formatted(hostname.substring(hostname.length() - 5));
+        return "Hello World v2.0 on %s".formatted(hostname.substring(hostname.length() - 5));
     }
 }

@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
         - name: k8s-demo
-          image: ebonny/k8s-demo:1.0
+          image: ebonny/k8s-demo:2.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
@@ -47,15 +47,15 @@ spec:
 
 ---
 # service.yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: k8s-demo-service
-spec:
-  selector:
-    app: k8s-demo
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8080
-  type: LoadBalancer
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: k8s-demo-service
+#spec:
+#  selector:
+#    app: k8s-demo
+#  ports:
+#    - protocol: TCP
+#      port: 80
+#      targetPort: 8080
+#  type: LoadBalancer
